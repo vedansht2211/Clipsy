@@ -100,15 +100,10 @@ export default function RoomContent() {
                 <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    className="w-full h-64 p-4 bg-black text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 mb-4"
-                    placeholder="Type your markdown text here..."
+                    className="w-full h-120 p-4 bg-black text-white border border-gray-600 rounded-md "
+                    placeholder="Type here..."
                 />
                 
-                <div className="mb-4 h-64 overflow-y-auto bg-black text-white p-4 border border-gray-600 rounded-md">
-                    <ReactMarkdown>
-                        {text || "*Markdown preview will appear here...*"}
-                    </ReactMarkdown>
-                </div>
                 <div className="flex flex-row justify-center">
                 <button
                 onClick={async () => {
