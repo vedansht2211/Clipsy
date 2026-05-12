@@ -1,11 +1,10 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 
-export default function RoomPage() {
+function RoomContent() {
     const uploadFile = async () => {
 
         if (!selectedFile) {
@@ -201,5 +200,13 @@ export default function RoomPage() {
         </button>
 
         </div>
+  );
+}
+
+export default function RoomPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RoomContent />
+    </Suspense>
   );
 }
