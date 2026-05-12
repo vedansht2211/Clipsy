@@ -29,7 +29,7 @@ export async function GET(req: Request) {
 
     const chunks: Uint8Array[] = [];
 
-    return await new Promise((resolve, reject) => {
+    return await new Promise<Response>((resolve, reject) => {
 
       downloadStream.on("data", (chunk) => {
         chunks.push(chunk);
